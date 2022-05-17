@@ -1,37 +1,53 @@
-const uuid = require("uuid/dist/v4");
-const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 const path = require("path");
+const fs = require("fs");
 
 class Laptop {
-  constructor(title, price, img) {
+  constructor(title, price, description, img) {
     this.title = title;
     this.price = price;
+    this.description = description;
     this.img = img;
-    this.id = uuid();
+    this.id = uuidv4();
   }
 
-  toJSON() {
-    return JSON.stringify({
+  jsonDataToString() {
+    return {
       title: this.title,
       price: this.price,
+      description: this.description,
       img: this.img,
-      id: this.id      
-    })
+      id: this.id,
+    };
   }
 
-  save() {
-    const laptops = await Laptop.getData();
-    console.log("laptops this");
+  async save() {
+    const laptops = await Laptop.getAllData();
+    laptops.push(this.jsonDataToString());
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        path.join(__dirname, "..", "data", "laptop.json"),
+        JSON.stringify(laptops),
+        (err) => {
+          if (err) reject(err);
+          resolve();
+        }
+      );
+    });
   }
 
-  static getData() {
+  static getAllData() {
     return new Promise((resolve, reject) => {
       fs.readFile(
         path.join(__dirname, "..", "data", "laptop.json"),
         "utf-8",
         (err, data) => {
-          if (err) reject(err);
-          resolve(JSON.parse(data));
+          if (err) {
+            reject(err);
+          } else {
+            resolve(JSON.parse(data));
+          }
         }
       );
     });

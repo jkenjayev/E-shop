@@ -2,13 +2,19 @@
 <form action="/products/create" class="mt-4 offset-1 cl-8" method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Laptop model</label>
-    <input type="text" class="form-control" id="title" />
+    <input type="text" class="form-control" id="title" name="title" />
+    <br />
 
     <label for="exampleInputEmail1">Laptop price</label>
-    <input type="number" class="form-control" id="price" />
+    <input type="number" class="form-control" id="price" name="price" />
+    <br />
+
+    <label for="exampleInputEmail1">Laptop description</label>
+    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    <br />
 
     <label for="exampleInputEmail1">URL image</label>
-    <input type="text" class="form-control" id="img" />
+    <input type="text" class="form-control" id="img" name="img" />
   </div>
   <button class="btn btn-primary">Create Laptop</button>
 </form>
