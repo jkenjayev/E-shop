@@ -1,0 +1,14 @@
+.card-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+#description {
+  max-height: 80px;
+  overflow: hidden;
+}

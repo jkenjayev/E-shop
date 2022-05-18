@@ -1,9 +1,1 @@
-[
-  {
-    "title": "HP",
-    "price": "500",
-    "description": "djflajfdl",
-    "img": "lsjfs.jlsjfdjso",
-    "id": "8cf12770-60d5-4133-97a2-a80615b53c95"
-  }
-]
+[{"title":"XPS 15 Laptop","price":"1800","description":"11th Gen Intel® Core™\r\ni7-11800H(24 MB\r\ncache,8cores,16\r\nthreads,up to 4.60 GHz\r\nTurbo)","img":"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.techspot.com%2Fimages%2Fproducts%2F2019%2Flaptops%2Forg%2F2019-08-09-product-5.jpg&f=1&nofb=1","id":"f1aca319-5d09-4dd9-bb3d-f275de84b17e"},{"title":"HP SPECTRE X360 16","price":"1500","description":"Windows 11 HomeIntel® Core™ i7-11390H (up to 5.0 GHz, 12 MB L3 cache, 4 cores, 8 threads) + Intel® Iris® Xe Graphics + 16 GB (Onboard)512 GB PCIe® NVMe™ M.2 SSD","img":"https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07833555.png","id":"303b74db-1ec6-4bc7-8e15-0fb46a90675c"}]
