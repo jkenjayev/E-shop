@@ -1,3 +1,6 @@
+body {
+  background: #eee;
+}
 .card-box {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -10,9 +13,27 @@
 }
 
 .card-body {
-  flex-grow: 1;
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+  height: 220px !important;
+  max-height: 220px;
 }
+
+.card-img-top {
+  height: 200px !important;
+  max-height: 200px;;
+
+}
+
+/*  */
 #description {
   max-height: 80px;
   overflow: hidden;
+}
+
+#details {
+  padding: 0px;
+  margin: 5px;
+  color: black;
 }
