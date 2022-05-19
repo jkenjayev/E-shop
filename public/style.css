@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#product {
-=======
 .card-box {
->>>>>>> 6b29ae0d0a6e481f5ec8da84bb7deb9b254dd83a
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
@@ -12,14 +8,11 @@
   display: flex;
   flex-direction: column;
 }
-<<<<<<< HEAD
 
 .card-body {
   flex-grow: 1;
 }
-=======
 #description {
   max-height: 80px;
   overflow: hidden;
 }
->>>>>>> 6b29ae0d0a6e481f5ec8da84bb7deb9b254dd83a
