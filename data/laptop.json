@@ -1,9 +1,30 @@
 [
   {
-    "title": "HP",
-    "price": "500",
-    "description": "djflajfdl",
-    "img": "lsjfs.jlsjfdjso",
-    "id": "8cf12770-60d5-4133-97a2-a80615b53c95"
+    "title": "XPS 15 Laptop",
+    "price": "1800",
+    "description": "Processor\r\n11th Gen Intel® Core™ i7-11800H (24 MB cache, 8 cores, 16 threads, up to 4.60 GHz Turbo)\r\n\r\n \r\n",
+    "img": "https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9510/media-gallery/xs9510t_cnb_00055rf110_bk.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=402&qlt=100,0&resMode=sharp2&size=402,402",
+    "id": "67ad3a3b-8594-4e9a-a59f-5c30f252bb74"
+  },
+  {
+    "title": "Razer Blade 14 - Full HD 144Hz - GeForce RTX 3060 - Black",
+    "price": "2000",
+    "description": "AMD Ryzen™ 9 6900HX\r\nWindows 11 Home\r\n14\" 144Hz Full HD\r\nGeForce RTX 3060\r\n16GB 4800MHz RAM, 1TB SSD",
+    "img": "https://assets3.razerzone.com/zStdp4z65eHbNaNUG-wHlRp9lzc=/300x300/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhbd%2Fh06%2F9286402375710%2Fblade14-p8-fhd-500x500.png",
+    "id": "83de7a05-3cff-4987-a48a-9c38ce3b96ef"
+  },
+  {
+    "title": "Legion 5 Gen 6 (15” AMD) Gaming Laptop",
+    "price": "880",
+    "description": "Battle-ready performance\r\nUp to AMD Ryzen™ 7 5800H mobile processors \r\n\r\nUp to NVIDIA® GeForce RTX™ 30 series graphics\r\n\r\n15\" FHD display, featuring amazing color accuracy and Dolby Vision™\r\n\r\nNahimic 3D audio and the Legion Truestrike keyboard\r\n\r\nPlay over 100 high-quality PC games with your new Legion PC and 3 free months of Xbox Game Pass",
+    "img": "https://p3-ofp.static.pub/fes/cms/2022/03/17/upwgymuitl06o47hq5p7yq6huyaiot597175.png",
+    "id": "f6dcf577-3607-4a31-9e57-f550b2518c73"
+  },
+  {
+    "title": "PREDATOR TRITON 500 FORGED THIN",
+    "price": "800",
+    "description": "Infused with a 10th Gen Intel® Core™ i7 Processor1 and GeForce® RTX 2080 SUPER™ Max-Q 1, this laptop was forged to obliterate your games, empower your creativity and inspire envy from friends and family alike. All this on a 300Hz/3ms display1,2.",
+    "img": "https://static.acer.com/up/Resource/Acer/Predator_Minisite/Product_Series/Predator_Triton_500/rev-april-2020/overview/20200408/Predator-Triton-500-kspmain-1-l.jpg",
+    "id": "e274ba89-af82-49a4-967c-d6711076c922"
   }
 ]

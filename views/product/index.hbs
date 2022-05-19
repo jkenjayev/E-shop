@@ -1,1 +1,22 @@
-<h3>this is products page</h3>
+<div class="container">
+  <div class="row">
+      <h1 class="text-center justify-content-center mb-4">Laptops for sale</h1>
+    <div class="col-11 offset-1 text-center justify-content-center" id="product">
+      {{#if laptops.length}}
+      {{#each laptops}}
+      <div class="card" style="width: 18rem;">
+        <img src="{{img}}" class="card-img-top" alt="{{title}}" />
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">Laptop price: ${{price}}</p>
+          <p class="card-text">{{description}}</p>
+          <a href="/products/{{id}}" class="btn btn-primary">Laptop details</a>
+        </div>
+      </div>    
+      {{/each}}
+    </div>
+      {{else}}
+      <h2>Nothing</h2>
+      {{/if}}
+  </div>
+</div>
