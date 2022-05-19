@@ -1,0 +1,41 @@
+<div class="container bg-muted">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-bold text-center justify-content-center">Laptops for sale!</h1>
+    </div>
+    <div class="col-10 offset-1">
+      {{#if laptops.length}}
+        <div class="card-box">
+          {{#each laptops}}
+            <div class="card" style="width: 18rem;">
+              <img src="{{img}}" class="card-img-top p-2" alt="{{title}}" />
+              <hr />
+              <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text priceLaptop">{{price}}</p>
+                <p class="card-text" id="description">{{description}}</p>
+                <hr />
+                <a
+                  href="/product/index/{{id}}"
+                  class="btn btn-primary text-center"
+                >Laptop details</a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <h1>Nothing found!!!</h1>
+      {{/if}}
+      <br />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+  </div>
+  <div class="col-10 offset-1">
+
+  </div>
+</div>
