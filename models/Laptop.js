@@ -52,6 +52,11 @@ class Laptop {
       );
     });
   }
+
+  static async getLaptopById(id) {
+    const laptop = await Laptop.getAllData();
+    return laptop.find(l => l.id === id);
+  }
 }
 
 module.exports = Laptop;

@@ -3,7 +3,7 @@ const Laptop = require("../models/Laptop");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("product/create", { title: "Create Product page" });
+  res.render("products/create", { title: "Create Product page" });
 });
 
 router.post("/", async (req, res) => {
