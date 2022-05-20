@@ -1,0 +1,22 @@
+<div id="Update-page">
+  <h1 class="text-center justify-content-center">Edit Laptop details</h1>
+<form action="/products/edit" class="mt-4 offset-1 cl-8" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Laptop model</label>
+    <input type="text" class="form-control" id="title" name="title" required value="{{laptop.title}}"/>
+    <br />
+
+    <label for="exampleInputEmail1">Laptop price</label>
+    <input type="number" class="form-control" id="price" name="price" value="{{laptop.price}}"/>
+    <br />
+
+    <label for="exampleInputEmail1">Laptop description</label>
+    <textarea class="form-control" id="description" name="description" rows="3">{{laptop.description}}</textarea>
+    <br />
+
+    <label for="exampleInputEmail1">URL image</label>
+    <input type="text" class="form-control" id="img" name="img" value="{{laptop.img}}"/>
+  </div>
+  <button class="btn btn-primary">Create Laptop</button>
+</form>
+</div>
