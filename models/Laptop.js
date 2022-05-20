@@ -57,6 +57,23 @@ class Laptop {
     const laptop = await Laptop.getAllData();
     return laptop.find(l => l.id === id);
   }
+
+  static async update(laptop) {
+    const laptops = await Laptop.getAllData();
+    const index = laptops.findIndex(l => l.id === laptop.id) ;
+    laptops[index] = laptop;
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        path.join(__dirname, "..", "data", "laptop.json"),
+        JSON.stringify(laptops),
+        (err) => {
+          if (err) reject(err);
+          resolve();
+        }
+      );
+    });
+  }
 }
 
 module.exports = Laptop;
