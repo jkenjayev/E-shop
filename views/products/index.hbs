@@ -29,6 +29,10 @@
                   target="_blank"
                   class="btn btn-outline-info text-center"
                 >Edit Laptop</a>
+                <form action="/card/add" method="post" class="text-center justify-content-center">
+                  <input type="hidden" name="id" value="{{id}}">
+                  <button type="submit" class="btn btn-outline-primary btn-block">Add card</button>
+                </form>
               </div>
             </div>
           {{/each}}

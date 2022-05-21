@@ -17,6 +17,6 @@ router.post("/", async (req, res) => {
     req.body.img
   );
   await laptop.save();
-  res.redirect("/products");
+  res.redirect("/");
 });
 module.exports = router;

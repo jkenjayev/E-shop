@@ -5,7 +5,7 @@ const app = express();
 const HomeRoute = require("./routes/home");
 const ProductsRoute = require("./routes/products");
 const CreateProductRoute = require("./routes/createProduct");
-
+const AddCardRoute = require("./routes/AddCard");
 /* App sets */
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
@@ -19,5 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", HomeRoute);
 app.use("/products", ProductsRoute);
 app.use("/products/create", CreateProductRoute);
+app.use("/card", AddCardRoute);
 /* Listener */
 app.listen(5000, () => console.log(`Server has been running on port 5000`));
