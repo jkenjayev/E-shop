@@ -1,1 +1,39 @@
-<h1>Basket</h1>
+<div class="container-fluid bg-muted">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-bold text-center justify-content-center">Laptops for sale!</h1>
+    </div>
+    <div class="col-8 offset-2" id="card" style="margin-top: 100px;">
+      {{#if laptops.length}}
+        <table class="table">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="text-center justify-content-center"
+              >Quality</th>
+              <th scope="col">Title</th>
+              <th scope="col">Price</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          {{#each laptops}}
+            <tr>
+              <th class="row text-center justify-content-center">{{count}}</th>
+              <td>{{title}}</td>
+              <td>{{price}}</td>
+              <td>
+                <button data-id="{{id}}" class="btn btn-danger  js-remove">Delete</button>
+              </td>
+            </tr>
+          {{/each}}
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <div class="text-center justify-content-center"><h1><b>Total
+              price: ${{price}}</b></h1></div>
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ const express = require("express");
 const Laptop = require("../models/Laptop");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/add", (req, res) => {
   res.render("products/create", {
     layout: "main",
     title: "Create Product page",

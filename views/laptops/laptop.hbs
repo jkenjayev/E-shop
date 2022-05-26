@@ -1,12 +1,23 @@
-<div class="container single-laptop">
+{{!-- <div class="container single-laptop">
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-8">
       <div class="laptop">
-        <h1 class="laptop-title text-center justify-content-center">{{laptop.title}}</h1>
-        <img src="{{laptop.img}}" alt="{{laptop.title}}" class="laptop-img ">
-        <p class="price"><h1>Laptop price:  ${{laptop.price}}</h1></p>
-        <p class="laptop-description">{{laptop.description}}</p>
+        
+    
       </div>
+    </div>
+  </div>
+</div> --}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center justify-content-center"><h1 class="laptop-title">{{laptop.title}}</h1></div>
+    <div class="col-5">
+        <img src="{{laptop.img}}" alt="{{laptop.title}}" class="laptop-img ">
+    </div>
+    <div class="col-5 pt-4 offset-1">
+    <p class="price"><h1>Laptop price:  ${{laptop.price}}</h1></p>
+        <p class="laptop-description">{{laptop.description}}</p>
     </div>
   </div>
 </div>

@@ -1,10 +1,12 @@
-<div class="col-12">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
   <h1 class="text-center justify-content-center">Edit Laptop details</h1>
 </div>
 <div class="col-5 d-flex flex-column">
   <img src="{{laptop.img}}" alt="{{laptop.title}}" class="laptop-img" />
 </div>
-<div id="Update-page" class="col-6  d-flex flex-column">
+<div id="Update-page" class="col-4 offset-1 mt-4  d-flex flex-column">
   <form action="/products/edit" class="mt-4 offset-1 cl-8" method="POST">
     <div class="form-group">
       <label for="exampleInputEmail1">Laptop model</label>
@@ -49,4 +51,6 @@
     <input type="hidden" name="id" value="{{laptop.id}}" />
     <button class="btn btn-outline-info">Update Laptop</button>
   </form>
+</div>
+  </div>
 </div>
