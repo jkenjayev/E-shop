@@ -10,13 +10,17 @@ router.get("/add", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const laptop = new Laptop(
-    req.body.title,
-    req.body.price,
-    req.body.description,
-    req.body.img
-  );
-  await laptop.save();
-  res.redirect("/");
+  const laptop = new Laptop({
+    title: req.body.title,
+    price: req.body.price,
+    description: req.body.description,
+    img: req.body.img,
+  });
+  try {
+    await laptop.save();
+    res.redirect("/");
+  } catch (err) {
+    console.log("Product creating error: ", err);
+  }
 });
 module.exports = router;
