@@ -15,32 +15,26 @@
                 <p class="card-text"><h4><b>Laptop price ${{price}}</b></h4></p>
                 <p class="card-text" id="description">{{description}}</p>
               </div>
-              <div class="card-footer p-0 m-0">
                 <a
                   id="details"
                   href="/products/{{id}}"
                   target="_blank"
-                  class="btn btn-outline-info text-center"
-                >Laptop details</a>
+                  class="btn"
+                >Details</a>
 
                 <a
                   id="details"
                   href="/products/{{id}}/edit?allow=true"
                   target="_blank"
-                  class="btn btn-outline-info text-center"
-                >Edit Laptop</a>
+                  class="btn"
+                >Edit</a>
                 <form
                   action="/card/add"
                   method="post"
-                  class="text-center justify-content-center"
                 >
                   <input type="hidden" name="id" value="{{id}}" />
-                  <button
-                    type="submit"
-                    class="btn btn-outline-primary btn-block"
-                  >Add card</button>
+                  <button type="submit" class="btn btn-primary">Buy</button>
                 </form>
-              </div>
             </div>
           {{/each}}
         </div>

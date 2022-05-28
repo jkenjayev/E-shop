@@ -12,7 +12,6 @@ router.get("/:id", async (req, res) => {
   res.render("laptops/laptop", { layout: "details", laptop });
 });
 
-
 router.get("/:id/edit", async (req, res) => {
   if (!req.query.allow) {
     return res.redirect("/");
@@ -22,9 +21,17 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 router.post("/edit", async (req, res) => {
-  await Laptop.findByIdAndUpdate(req.params.id, req.body);
+  await Laptop.findByIdAndUpdate(req.body.id, req.body);
   res.redirect("/products");
-})
+});
 
+router.post("/remove", async (req, res) => {
+  try {
+    await Laptop.deleteOne({ _id: req.body.id });
+    res.redirect("/products");
+  } catch (err) {
+    console.log(err); 
+  }
+});
 
 module.exports = router;

@@ -6,7 +6,7 @@
 <div class="col-5 d-flex flex-column">
   <img src="{{laptop.img}}" alt="{{laptop.title}}" class="laptop-img" />
 </div>
-<div id="Update-page" class="col-4 offset-1 mt-4  d-flex flex-column">
+<div id="Update-page" class="col-4 offset-1 mt-4  d-flex flex-column shadow" style="border: none">
   <form action="/products/edit" class="mt-4 offset-1 cl-8" method="POST">
     <div class="form-group">
       <label for="exampleInputEmail1">Laptop model</label>
@@ -50,6 +50,10 @@
     </div>
     <input type="hidden" name="id" value="{{laptop.id}}" />
     <button class="btn btn-outline-info">Update Laptop</button>
+  </form>
+  <form class="mt-1 offset-1 cl-8" action="/products/remove" method="post">
+    <input type="hidden" name="id" value="{{laptop.id}}" />
+    <button class="btn btn-outline-danger">Delete Laptop</button>
   </form>
 </div>
   </div>

@@ -58,7 +58,9 @@ body {
 }
 
 #details {
-  padding: 5px 10px;
-  margin: 5px 10px;
-  color: black;
+  float: inline-start;
+  width: 60px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
 }
