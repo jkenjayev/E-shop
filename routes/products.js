@@ -3,7 +3,7 @@ const Laptop = require("../models/Laptop");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const laptops = await Laptop.find();
+  const laptops = await Laptop.find().populate("userId", "email name");
   res.render("products/index", { title: "Laptops", isProducts: true, laptops });
 });
 

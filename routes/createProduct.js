@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
     price: req.body.price,
     description: req.body.description,
     img: req.body.img,
+    userId: req.user._id
   });
   try {
     await laptop.save();

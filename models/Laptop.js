@@ -20,6 +20,11 @@ const laptopSchema = new Schema({
     type: String,
     required: true,
   },
+
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  }
 });
 
 module.exports = model("Laptop", laptopSchema);
