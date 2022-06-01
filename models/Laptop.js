@@ -27,4 +27,12 @@ const laptopSchema = new Schema({
   }
 });
 
+laptopSchema.method("toClient", function () {
+  const laptop = this.toObject();
+  laptop.id = laptop._id;
+  delete laptop._id;
+  
+  return laptop;
+})
+
 module.exports = model("Laptop", laptopSchema);

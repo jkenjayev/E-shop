@@ -8,6 +8,7 @@ const ProductsRoute = require("./routes/products");
 const CreateProductRoute = require("./routes/createProduct");
 const AddCardRoute = require("./routes/AddCard");
 const User = require("./models/User");
+const OrdersRouter = require("./routes/orders");
 
 const startProject = start();
 
@@ -37,6 +38,7 @@ app.use("/", HomeRoute);
 app.use("/products", ProductsRoute);
 app.use("/products/create", CreateProductRoute);
 app.use("/card", AddCardRoute);
+app.use("/orders", OrdersRouter);
 
 
 /* Database connection*/

@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1 class="text-info text-center justify-content-center mt-4">Orders</h1>
+      {{#if orders.length}}
+        {{#each orders}}
+          <div class="shadow-lg p-4">
+            <table class="table">
+              <tr class="table-borderless">
+                <th colspan="2">Customer:
+                  {{user.userId.name}}
+                  <i>{{user.userId.email}}</i></th>
+              </tr>
+              {{#each laptops}}
+                <tr>
+                  <td>{{laptop.title}} (x {{count}})</td>
+                  <td> <b>$ {{laptop.price}}</b></td>
+                </tr>
+              {{/each}}
+              <tr>
+                <td>Subtotal</td>
+                <td><b>${{price}}</b></td>
+              </tr>
+              <tr>
+                <td>Shipping</td>
+                <td class="text-info">Free shipping</td>
+              </tr>
+              <tr>
+                <td class="date">{{date}}</td>
+              </tr>
+            </table><br />
+            <div>
+              <input type="radio" name="dbt" value="dbt" checked />
+              Direct Bank Transfer
+            </div>
+            <p>
+              Make your payment directly into our bank account. Please use your
+              Order ID as the payment reference. Your order will not be shipped
+              until the funds have cleared in our account.
+            </p>
+            <div>
+              <input type="radio" name="dbt" value="cd" />
+              Cash on Delivery
+            </div>
+            <button type="submit" class="btn btn-success">Place Order</button>
+          </div>
+        {{/each}}
+
+      {{else}}
+        <p class="text-danger">Not found!</p>
+      {{/if}}
+    </div>
+  </div>
+</div>

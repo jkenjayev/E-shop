@@ -35,6 +35,11 @@
           </tr>
         </table>
         <div class="text-center justify-content-center"><h1><b>Total price: ${{price}}</b></h1></div>
+        <div class="text-center justify-content-center">
+        <form action="/orders" method="POST">
+          <button type="submit" class="btn btn-outline-primary">Make Order</button>
+        </form>
+        </div>
       {{else}}
         <div class="container-fluid mt-100">
           <div class="row">

@@ -17,15 +17,22 @@ router.get("/", async (req, res) => {
 });
 
 router.delete("/remove/:id", async (req, res) => {
-  const cart = await Card.remove(req.params.id);
-  res.status(200).send(cart);
+  await req.user.removeFromCart(req.params.id);
+  const user = await req.user.populate("cart.items.laptopId");
+  const laptops = mappingCart(user.cart);
+  const cart = {
+    laptops,
+    price: computePrice(laptops),
+  };
+  res.status(200).json(cart);
 });
 
 function mappingCart(cart) {
   return cart.items.map((l) => ({
     ...l.laptopId._doc,
-    count: l.count
-  }))
+    id: l.laptopId.id,
+    count: l.count,
+  }));
 }
 
 function computePrice(laptops) {

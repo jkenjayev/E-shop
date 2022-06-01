@@ -49,4 +49,25 @@ userSchema.methods.addToCart = function (laptop) {
   return this.save();
 };
 
+userSchema.methods.removeFromCart = function (id) {
+  let items = [...this.cart.items];
+  const indexOfLaptop = items.findIndex((l) => {
+    return l.laptopId.toString() === id.toString();
+  });
+
+  if (items[indexOfLaptop].count === 1) {
+    console.log(items[indexOfLaptop]);
+    items = items.filter((l) => l.laptopId.toString() !== id.toString());
+  } else {
+    items[indexOfLaptop].count--;
+  }
+
+  this.cart = { items };
+  return this.save();
+};
+
+userSchema.methods.cleanCart = function() {
+  this.cart = {items: [] }
+  return this.save();
+}
 module.exports = model("User", userSchema);
