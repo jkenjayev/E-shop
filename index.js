@@ -9,6 +9,7 @@ const CreateProductRoute = require("./routes/createProduct");
 const AddCardRoute = require("./routes/AddCard");
 const User = require("./models/User");
 const OrdersRouter = require("./routes/orders");
+const authRoute = require("./routes/auth");
 
 const startProject = start();
 
@@ -39,7 +40,7 @@ app.use("/products", ProductsRoute);
 app.use("/products/create", CreateProductRoute);
 app.use("/card", AddCardRoute);
 app.use("/orders", OrdersRouter);
-
+app.use("/login", authRoute);
 
 /* Database connection*/
 async function start() {

@@ -7,7 +7,7 @@
       {{#if laptops.length}}
         <div class="card-box m-3">
           {{#each laptops}}
-            <div class="card" style="width: 18rem;">
+            <div class="card m-4" style="width: 17rem;">
               <img src="{{img}}" class="card-img-top" alt="{{title}}" />
               <hr />
               <div class="card-body m-0">
@@ -35,7 +35,7 @@
                   <input type="hidden" name="id" value="{{id}}" />
                   <button type="submit" class="btn btn-primary">Buy</button>
                 </form>
-            </div>
+            </div> 
           {{/each}}
         </div>
       {{else}}
