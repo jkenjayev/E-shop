@@ -1,3 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.form-group input, .form-group textarea {
+  border: none;
+  box-shadow: 1px 3px #888888;
+}
+
+#addLaptop {
+  margin: 0px;
+  padding: 0px 5px;
+}
+
+
 body {
   background: #eee;
 }
@@ -35,13 +51,12 @@ body {
 .card {
   display: flex;
   flex-direction: column;
+  margin: 15px 0px;
 }
 
 .card-body {
   font-size: 12px;
   padding: 5px;
-  text-align: center;
-  height: 220px !important;
   max-height: 220px;
 }
 

@@ -1,7 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const hbs = require("./dependencies/engine-config");
+const session = require("express-session");
+const mongoStore = require("connect-mongodb-session")(session);
 const app = express();
+const authMiddleware = require("./middlewares/authMiddleware");
 /* Routers */
 const HomeRoute = require("./routes/home");
 const ProductsRoute = require("./routes/products");
@@ -10,7 +13,14 @@ const AddCardRoute = require("./routes/AddCard");
 const User = require("./models/User");
 const OrdersRouter = require("./routes/orders");
 const authRoute = require("./routes/auth");
+const url = "mongodb://localhost/products";
 
+const store = new mongoStore({
+  collection: "sessions",
+  uri: url,
+});
+
+/* Start Project */
 const startProject = start();
 
 /* App sets */
@@ -19,7 +29,7 @@ app.set("view engine", "hbs");
 app.set("views", "views");
 
 /* Middleware */
-app.use(async (req, res, next) => {
+/* app.use(async (req, res, next) => {
   try {
     const user = await User.findById("6291fdd0bd2d72090df316f5");
     req.user = user;
@@ -27,8 +37,18 @@ app.use(async (req, res, next) => {
   } catch (err) {
     console.log(`Error with user authentication: `, err);
   }
-});
+}); */
 
+app.use(
+  session({
+    secret: "secret dog",
+    resave: false,
+    saveUninitialized: false,
+    store,  
+  })
+);
+
+app.use(authMiddleware);
 
 /* App uses */
 app.use(express.static("public"));
@@ -40,18 +60,17 @@ app.use("/products", ProductsRoute);
 app.use("/products/create", CreateProductRoute);
 app.use("/card", AddCardRoute);
 app.use("/orders", OrdersRouter);
-app.use("/login", authRoute);
+app.use("/auth", authRoute);
 
 /* Database connection*/
 async function start() {
   try {
-    const url = "mongodb://localhost/products";
     await mongoose
       .connect(url, { useNewUrlParser: true })
-      .then(() => console.log(`connection is OK`))
+      .then(() => console.log(`connection with DB is OK`))
       .catch((err) => console.log(`Error on database connection: `, err));
 
-    const candidate = await User.findOne();
+    /*     const candidate = await User.findOne();
     if (!candidate) {
       const userNew = new User({
         name: "John",
@@ -60,7 +79,7 @@ async function start() {
       });
 
       await userNew.save();
-    }
+    } */
 
     /* Listener */
     app.listen(5000, () => console.log(`Server has been running on port 5000`));
