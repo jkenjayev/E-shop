@@ -9,7 +9,7 @@ router.get("/add", (req, res) => {
   });
 });
 
-router.post("/", async (req, res) => {
+router.post("/",  async (req, res) => {
   const laptop = new Laptop({
     title: req.body.title,
     price: req.body.price,

@@ -11,6 +11,11 @@ const userSchema = new Schema({
     required: true,
   },
 
+  password: {
+    type: String,
+    requried: true,
+  },
+
   cart: {
     items: [
       {
@@ -66,8 +71,8 @@ userSchema.methods.removeFromCart = function (id) {
   return this.save();
 };
 
-userSchema.methods.cleanCart = function() {
-  this.cart = {items: [] }
+userSchema.methods.cleanCart = function () {
+  this.cart = { items: [] };
   return this.save();
-}
+};
 module.exports = model("User", userSchema);

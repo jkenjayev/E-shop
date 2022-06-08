@@ -25,7 +25,7 @@
                   target="_blank"
                   class="btn p-2 flex-fill bd-highlight"
                 >Details</a>
-
+                {{#if @root.isAuth}}
                 <a
                   id="details"
                   href="/products/{{id}}/edit?allow=true"
@@ -36,6 +36,7 @@
                   <input type="hidden" name="id" value="{{id}}" />
                   <button type="submit" class="btn btn-primary">Buy</button>
                 </form>
+                {{/if}}
               </div>
             </div>
           {{/each}}

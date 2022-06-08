@@ -5,6 +5,8 @@ const session = require("express-session");
 const mongoStore = require("connect-mongodb-session")(session);
 const app = express();
 const authMiddleware = require("./middlewares/authMiddleware");
+const accessMiddleware = require("./middlewares/accessMiddleware");
+const userMiddleware = require("./middlewares/userMiddleware");
 /* Routers */
 const HomeRoute = require("./routes/home");
 const ProductsRoute = require("./routes/products");
@@ -49,6 +51,7 @@ app.use(
 );
 
 app.use(authMiddleware);
+app.use(userMiddleware);
 
 /* App uses */
 app.use(express.static("public"));
@@ -57,7 +60,7 @@ app.use(express.urlencoded({ extended: true }));
 /* Routes */
 app.use("/", HomeRoute);
 app.use("/products", ProductsRoute);
-app.use("/products/create", CreateProductRoute);
+app.use("/products/create", accessMiddleware, CreateProductRoute);
 app.use("/card", AddCardRoute);
 app.use("/orders", OrdersRouter);
 app.use("/auth", authRoute);
