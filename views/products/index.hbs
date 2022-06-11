@@ -26,12 +26,14 @@
                   class="btn p-2 flex-fill bd-highlight"
                 >Details</a>
                 {{#if @root.isAuth}}
+                {{#ifEqual userId._id  @root.userId}}
                 <a
                   id="details"
                   href="/products/{{id}}/edit?allow=true"
                   target="_blank"
                   class="btn p-2 flex-fill bd-highlight"
                 >Edit</a>
+                {{/ifEqual}}
                 <form action="/card/add" class="mr-4" method="post">
                   <input type="hidden" name="id" value="{{id}}" />
                   <button type="submit" class="btn btn-primary">Buy</button>

@@ -4,6 +4,7 @@ const { allowInsecurePrototypeAccess} = require("@handlebars/allow-prototype-acc
 
 const hbs = expressHandlebars.create({
   defaultLayout: "main",
+  helpers: require("../utils/editHelper"),
   handlebars: allowInsecurePrototypeAccess(Handlebars),
   extname: "hbs",
 });

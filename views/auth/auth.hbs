@@ -44,6 +44,9 @@
               >
                 <i class="fa-solid fa-user-large fa-7x mb-2"></i>
                 <br />
+                {{#if error}}
+                  <p class="text-danger">{{error}}</p>
+                {{/if}}
                 <h4>Sign Up To Laptop E-shop!</h4>
               </div>
               <div class="col-10 offset-1">
@@ -111,6 +114,9 @@
               >
                 <i class="fa-solid fa-user-large fa-7x mb-2"></i>
                 <br />
+                {{#if error}}
+                <p class="text-danger">{{error}}</p>
+                {{/if}}
                 <h3>Log In To Laptop E-shop!</h3>
               </div>
               <div class="col-10 offset-1">
@@ -139,7 +145,7 @@
                       name="password"
                       required
                     />
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback">  
                       Please choose a password.
                     </div>
                   </div>

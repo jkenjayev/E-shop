@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 const hbs = require("./dependencies/engine-config");
 const session = require("express-session");
 const mongoStore = require("connect-mongodb-session")(session);
+const flash = require("connect-flash");
 const app = express();
 const authMiddleware = require("./middlewares/authMiddleware");
 const accessMiddleware = require("./middlewares/accessMiddleware");
 const userMiddleware = require("./middlewares/userMiddleware");
+
 /* Routers */
 const HomeRoute = require("./routes/home");
 const ProductsRoute = require("./routes/products");
@@ -30,26 +32,15 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "views");
 
-/* Middleware */
-/* app.use(async (req, res, next) => {
-  try {
-    const user = await User.findById("6291fdd0bd2d72090df316f5");
-    req.user = user;
-    next();
-  } catch (err) {
-    console.log(`Error with user authentication: `, err);
-  }
-}); */
-
 app.use(
   session({
     secret: "secret dog",
     resave: false,
     saveUninitialized: false,
-    store,  
+    store,
   })
 );
-
+app.use(flash());
 app.use(authMiddleware);
 app.use(userMiddleware);
 
@@ -60,7 +51,7 @@ app.use(express.urlencoded({ extended: true }));
 /* Routes */
 app.use("/", HomeRoute);
 app.use("/products", ProductsRoute);
-app.use("/products/create", accessMiddleware, CreateProductRoute);
+app.use("/products/create", CreateProductRoute);
 app.use("/card", AddCardRoute);
 app.use("/orders", OrdersRouter);
 app.use("/auth", authRoute);
@@ -72,17 +63,6 @@ async function start() {
       .connect(url, { useNewUrlParser: true })
       .then(() => console.log(`connection with DB is OK`))
       .catch((err) => console.log(`Error on database connection: `, err));
-
-    /*     const candidate = await User.findOne();
-    if (!candidate) {
-      const userNew = new User({
-        name: "John",
-        email: "javohirwebdev@gmail.com",
-        cart: { items: [] },
-      });
-
-      await userNew.save();
-    } */
 
     /* Listener */
     app.listen(5000, () => console.log(`Server has been running on port 5000`));
